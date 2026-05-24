@@ -1,0 +1,94 @@
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--purple);
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: 8px;
+  padding: 4px 10px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, rgba(0, 212, 180, 0.06), rgba(139, 92, 246, 0.04));
+  border-color: var(--teal-mid) !important;
+  flex-wrap: wrap;
+}
+.bannerIcon {
+  width: 50px; height: 50px;
+  border-radius: 14px;
+  background: var(--teal-dim);
+  color: var(--teal);
+  display: grid; place-items: center;
+  flex-shrink: 0;
+}
+.bannerText { flex: 1; min-width: 200px; }
+.bannerText strong { font-size: 14.5px; display: block; margin-bottom: 4px; letter-spacing: -0.005em; }
+.bannerText p { font-family: var(--font-ui); font-size: 12.5px; color: var(--text-dim); }
+
+.list { display: flex; flex-direction: column; gap: 14px; }
+
+.aiCard {
+  animation: dashFadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition: all var(--transition);
+}
+.aiCard:hover { transform: translateY(-3px); border-color: var(--teal-mid); box-shadow: var(--shadow-teal); }
+.topMatch { border-color: var(--teal-mid) !important; }
+
+.cardInner { display: flex; gap: 16px; align-items: flex-start; }
+.cardBody { flex: 1; min-width: 0; }
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.cardTitle { font-size: 15px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.005em; }
+.cardMeta  { font-family: var(--font-ui); font-size: 12.5px; color: var(--text-dim); }
+
+.skillsSection { margin-bottom: 12px; }
+.skillsLabel {
+  font-family: var(--font-ui);
+  font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--muted); margin-bottom: 8px;
+}
+.skillsList { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.missingHint { font-family: var(--font-ui); margin-left: auto; font-size: 11.5px; color: var(--text-dim); }
+
+@media (max-width: 768px) {
+  .banner { gap: 12px; margin-bottom: 16px; }
+  .bannerIcon { width: 42px; height: 42px; }
+  .bannerText strong { font-size: 13px; }
+  .bannerText p { font-size: 11.5px; }
+  .cardInner { gap: 12px; }
+  .cardTitle { font-size: 14px; }
+  .cardMeta { font-size: 11.5px; }
+}
+
+@media (max-width: 480px) {
+  .banner { flex-direction: column; align-items: flex-start; }
+  .bannerIcon { align-self: center; }
+  .cardHeader { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .actions { justify-content: space-between; width: 100%; }
+  .missingHint { margin-left: 0; margin-top: 4px; width: 100%; }
+}
+
+@keyframes dashFadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

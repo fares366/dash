@@ -1,0 +1,31 @@
+.statGrid { margin-bottom: 20px; }
+
+.statCard {
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.statCard:hover {
+  border-color: var(--teal-mid);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-teal);
+}
+.statCardActive {
+  box-shadow: 0 0 0 1px var(--teal), var(--shadow-teal);
+  background: var(--surface2);
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 4px;
+  letter-spacing: -0.02em;
+}
+.statLabel {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-dim);
+  font-weight: 600;
+}

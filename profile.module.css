@@ -1,0 +1,89 @@
+.layout { display: flex; gap: 20px; align-items: flex-start; }
+
+.leftCol {
+  width: 240px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.avatarCard { text-align: center; }
+
+.avatarLg {
+  width: 76px; height: 76px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal), #3b82f6);
+  display: grid; place-items: center;
+  font-family: var(--font-display);
+  font-size: 28px; font-weight: 800;
+  color: #041108;
+  margin: 0 auto 12px;
+  box-shadow: 0 12px 24px rgba(0, 212, 180, 0.25);
+}
+.avatarName  { font-family: var(--font-display); font-size: 16px; font-weight: 700; letter-spacing: -0.01em; }
+.avatarLevel { font-family: var(--font-ui); font-size: 12px; color: var(--muted); margin-top: 2px; }
+.avatarUni   { font-family: var(--font-ui); font-size: 12px; color: var(--muted); margin-bottom: 14px; }
+
+.strengthCard { display: flex; flex-direction: column; }
+.strengthTitle { font-size: 13px; font-weight: 600; margin-bottom: 10px; }
+.strengthPct   { font-family: var(--font-ui); font-size: 12px; color: var(--teal); font-weight: 700; margin-bottom: 14px; }
+
+.checkItem { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+
+.rightCol { flex: 1; min-width: 0; }
+
+.cardTitle { font-family: var(--font-display); font-size: 16px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.01em; }
+.cardSub   { font-family: var(--font-ui); font-size: 12.5px; color: var(--text-dim); margin-bottom: 18px; }
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.skillItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.skillItem:last-child { border-bottom: none; }
+.skillActions { display: flex; gap: 8px; align-items: center; }
+
+.addRow { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+
+.prefTags { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.docCard {
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  transition: border-color var(--transition);
+}
+.docCard:hover { border-color: var(--teal-mid); }
+.docCardUploaded { border-color: var(--teal-mid); }
+.docTitle { font-weight: 600; font-size: 14px; margin-bottom: 4px; }
+.docStatus { font-family: var(--font-ui); font-size: 12px; }
+.docActions { display: flex; gap: 8px; flex-shrink: 0; }
+
+@media (max-width: 900px) {
+  .layout { flex-direction: column; }
+  .leftCol { width: 100%; flex-direction: row; flex-wrap: wrap; }
+  .avatarCard, .strengthCard { flex: 1; min-width: 240px; }
+}
+@media (max-width: 640px) {
+  .formGrid { grid-template-columns: 1fr; }
+  .docCard { flex-direction: column; align-items: stretch; }
+  .docActions { justify-content: flex-end; }
+  .leftCol { flex-direction: column; }
+  .avatarCard, .strengthCard { min-width: 0; }
+}
